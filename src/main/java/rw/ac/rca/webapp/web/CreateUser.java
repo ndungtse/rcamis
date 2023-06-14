@@ -3,6 +3,7 @@ package rw.ac.rca.webapp.web;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,6 +18,7 @@ import rw.ac.rca.webapp.dao.impl.UserDAOImpl;
 /**
  * Servlet implementation class CreateUser
  */
+@WebServlet(name = "CreateUser", urlPatterns = "/createuser.php")
 public class CreateUser extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private UserDAO userDAO = UserDAOImpl.getInstance();

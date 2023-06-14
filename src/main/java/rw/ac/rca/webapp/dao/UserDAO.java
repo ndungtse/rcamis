@@ -20,7 +20,7 @@ public interface UserDAO {
 
     public User saveOrUpdateUser(User user);
 
-    public boolean deleteUser(User user);
+    public boolean deleteUser(int id);
 
     public User getUserById(int userId);
 

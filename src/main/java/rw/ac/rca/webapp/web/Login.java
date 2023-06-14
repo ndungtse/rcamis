@@ -3,6 +3,7 @@ package rw.ac.rca.webapp.web;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,6 +20,7 @@ import rw.ac.rca.webapp.util.Util;
 /**
  * Servlet implementation class Login
  */
+@WebServlet(name = "Login", urlPatterns = "/login.php")
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	public static final Logger LOG = Logger.getLogger(Login.class);

@@ -7,6 +7,7 @@ import rw.ac.rca.webapp.orm.Course;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ListCourse
  */
+@WebServlet(name = "ListCourse", urlPatterns = "/listcourse.php")
 public class ListCourse extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private CourseDAO courseDAO = CourseDAOImpl.getInstance();

@@ -58,7 +58,7 @@
                 required/>
     </div>
     <div class="flex flex-col gap-y-1">
-        <label class=" px-2" for="endDate"> Course Start Date </label>
+        <label class=" px-2" for="endDate"> Course End Date </label>
         <input
                 class="p-2 w-full border-blue-700/50 duration-300 focus:border-blue-700 rounded-md outline-none border-2"
                 name="endDate"

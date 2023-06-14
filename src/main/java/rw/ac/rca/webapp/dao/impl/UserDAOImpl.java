@@ -108,9 +108,10 @@ public class UserDAOImpl extends DAO implements UserDAO {
 	 * @throws Exception
 	 */
 	@Override
-	public boolean deleteUser(User user) {
+	public boolean deleteUser(int userid) {
 		try {
 			begin();
+			User user = (User) getSession().get(User.class, userid);
 			getSession().delete(user);
 			commit();
 			return true;

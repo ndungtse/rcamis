@@ -5,8 +5,8 @@
     <session-factory>
         <property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://rcamis.mysql.database.azure.com:3306/rcawebapp</property>
-        <property name="hibernate.connection.username">carimount</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/rcawebapp</property>
+        <property name="hibernate.connection.username">root</property>
         <!--		<property name="hibernate.connection.password">chazard10.3</property>lhost:3306/rcawebapp</property>-->
         <!--		<property name="hibernate.connection.username">root</property>-->
         <property name="hibernate.connection.password">chazard10.3</property>

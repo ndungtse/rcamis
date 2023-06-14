@@ -3,6 +3,7 @@ package rw.ac.rca.webapp.web;
 import rw.ac.rca.webapp.util.UserRole;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,6 +13,7 @@ import java.io.IOException;
 /**
  * Servlet implementation class Dashboard
  */
+@WebServlet(name = "Dashboard", urlPatterns = "/dashboard.php")
 
 public class Dashboard extends HttpServlet {
 

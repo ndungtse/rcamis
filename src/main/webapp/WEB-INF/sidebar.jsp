@@ -36,7 +36,7 @@
                     class="flex items-center rounded-md py-2 px-3 hover:bg-blue-500/30 hover:text-blue-500 duration-200"
             >
                 <i class='bx bx-group text-2xl'></i>
-                <h1 class="ml-2">Users</h1>
+                <h1 class="ml-2">Instructors</h1>
             </a><a
                     href="listuser.php"
                     class="flex items-center rounded-md py-2 px-3 hover:bg-blue-500/30 hover:text-blue-500 duration-200"

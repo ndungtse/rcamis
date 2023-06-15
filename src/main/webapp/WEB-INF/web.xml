@@ -76,4 +76,150 @@
         <servlet-name>DashBoard</servlet-name>
         <url-pattern>/dashboard.php</url-pattern>
     </servlet-mapping>
+<!--   ================================================================  -->
+    <servlet>
+        <description></description>
+        <display-name>CreateStudent</display-name>
+        <servlet-name>CreateStudent</servlet-name>
+        <servlet-class>rw.ac.rca.webapp.web.CreateStudent</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateStudent</servlet-name>
+        <url-pattern>/createstudent.php</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <description>List all students from database</description>
+        <display-name>ListStudent</display-name>
+        <servlet-name>ListStudent</servlet-name>
+        <servlet-class>rw.ac.rca.webapp.web.ListStudent</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListStudent</servlet-name>
+        <url-pattern>/students.php</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description></description>
+        <display-name>CreateInstructor</display-name>
+        <servlet-name>CreateInstructor</servlet-name>
+        <servlet-class>rw.ac.rca.webapp.web.instructor.CreateInstructor</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateInstructor</servlet-name>
+        <url-pattern>/create_instructor.php</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description></description>
+        <display-name>ListMark</display-name>
+        <servlet-name>ListMark</servlet-name>
+        <servlet-class>rw.ac.rca.webapp.web.mark.ListMark</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListMark</servlet-name>
+        <url-pattern>/marks.php</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description></description>
+        <display-name>CreateMark</display-name>
+        <servlet-name>CreateMark</servlet-name>
+        <servlet-class>rw.ac.rca.webapp.web.mark.CreateMark</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateMark</servlet-name>
+        <url-pattern>/create_mark.php</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description></description>
+        <display-name>ListManager</display-name>
+        <servlet-name>ListManager</servlet-name>
+        <servlet-class>rw.ac.rca.webapp.web.manager.ListManager</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListManager</servlet-name>
+        <url-pattern>/managers.php</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description></description>
+        <display-name>CreateManager</display-name>
+        <servlet-name>CreateManager</servlet-name>
+        <servlet-class>rw.ac.rca.webapp.web.manager.CreateManager</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateManager</servlet-name>
+        <url-pattern>/create_manager.php</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <description></description>
+        <display-name>ListParent</display-name>
+        <servlet-name>ListParent</servlet-name>
+        <servlet-class>rw.ac.rca.webapp.web.parent.ListParent</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListParent</servlet-name>
+        <url-pattern>/parents.php</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description></description>
+        <display-name>CreateParent</display-name>
+        <servlet-name>CreateParent</servlet-name>
+        <servlet-class>rw.ac.rca.webapp.web.parent.CreateParent</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateParent</servlet-name>
+        <url-pattern>/create_parent.php</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description></description>
+        <display-name>ListEmployee</display-name>
+        <servlet-name>ListEmployee</servlet-name>
+        <servlet-class>rw.ac.rca.webapp.web.employee.ListEmployee</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListEmployee</servlet-name>
+        <url-pattern>/employees.php</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description></description>
+        <display-name>CreateEmployee</display-name>
+        <servlet-name>CreateEmployee</servlet-name>
+        <servlet-class>rw.ac.rca.webapp.web.employee.CreateEmployee</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateEmployee</servlet-name>
+        <url-pattern>/create_employee.php</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <description></description>
+        <display-name>ListInstructor</display-name>
+        <servlet-name>ListInstructor</servlet-name>
+        <servlet-class>rw.ac.rca.webapp.web.instructor.ListInstructor</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListInstructor</servlet-name>
+        <url-pattern>/instructors.php</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description></description>
+        <display-name>UpdateCourse</display-name>
+        <servlet-name>UpdateCourse</servlet-name>
+        <servlet-class>rw.ac.rca.webapp.web.UpdateCourse</servlet-class>
+        <init-param>
+            <param-name>id</param-name>
+            <param-value>1</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateCourse</servlet-name>
+        <url-pattern>/updatecourse.php/*</url-pattern>
+    </servlet-mapping>
 </web-app>

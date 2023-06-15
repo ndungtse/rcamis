@@ -31,6 +31,34 @@
                 <i class='bx bx-group text-2xl'></i>
                 <h1 class="ml-2">Users</h1>
             </a>
+            <a
+                    href="students.php"
+                    class="flex items-center rounded-md py-2 px-3 hover:bg-blue-500/30 hover:text-blue-500 duration-200"
+            >
+                <i class='bx bx-group text-2xl'></i>
+                <h1 class="ml-2">Students</h1>
+            </a>
+            <a
+                    href="marks.php?page='marks'&action='list'"
+                    class="flex items-center rounded-md py-2 px-3 hover:bg-blue-500/30 hover:text-blue-500 duration-200"
+            >
+                <i class='bx bx-group text-2xl'></i>
+                <h1 class="ml-2">Marks</h1>
+            </a>
+            <a
+                    href="instructors.php"
+                    class="flex items-center rounded-md py-2 px-3 hover:bg-blue-500/30 hover:text-blue-500 duration-200"
+            >
+                <i class='bx bx-group text-2xl'></i>
+                <h1 class="ml-2">Intructors</h1>
+            </a>
+            <a
+                    href="managers.php"
+                    class="flex items-center rounded-md py-2 px-3 hover:bg-blue-500/30 hover:text-blue-500 duration-200"
+            >
+                <i class='bx bx-group text-2xl'></i>
+                <h1 class="ml-2">Managers</h1>
+            </a>
         </div>
     </div>
     <div class="flex flex-col gap-y-3 w-full">

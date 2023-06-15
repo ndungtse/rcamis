@@ -86,7 +86,7 @@
 					<runtime>
 						<os>Linux</os>
 						<webContainer>Java SE</webContainer>
-						<javaVersion>Java 17</javaVersion>
+						<javaVersion>Java 20</javaVersion>
 					</runtime>
 					<deployment>
 						<resources>
@@ -133,6 +133,12 @@
 			<artifactId>antlr</artifactId>
 			<version>2.7.6</version>
 		</dependency>
+	  <dependency>
+		  <groupId>org.projectlombok</groupId>
+		  <artifactId>lombok</artifactId>
+		  <version>1.18.28</version>
+		  <scope>provided</scope>
+	  </dependency>
 		<dependency>
 			<groupId>dom4j</groupId>
 			<artifactId>dom4j</artifactId>
@@ -266,10 +272,10 @@
 	</dependencies>
 	<developers>
 		<developer>
-			<name>Aphrodice Rwagaju</name>
-			<email>aphrorwa@gmail.com</email>
+			<name>Valens NIYONSENGA</name>
+			<email>valensniyonsenga2003@gmail.com</email>
 			<roles>
-				<role>Software Programming Instructor</role>
+				<role>Student at Rwanda Coding Academy</role>
 			</roles>
 		</developer>
 	</developers>

@@ -45,6 +45,7 @@ public class CreateUser extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession httpSession = request.getSession();
         User user = new User();
+        System.out.println("============================================");
         String usernameauth = request.getParameter("username");
         String passwordauth = request.getParameter("password");
         String userfullname = request.getParameter("userfullname");

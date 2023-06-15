@@ -52,11 +52,11 @@ public class ListManager extends HttpServlet {
                 httpSession.setAttribute("managers", managers);
                 UserRole[] userRoles = UserRole.values();
                 httpSession.setAttribute("userRoles", userRoles);
-                request.getRequestDispatcher("WEB-INF/manager/managers.jsp").forward(request , response);
+                request.getRequestDispatcher("WEB-INF/pages/managers.jsp").forward(request , response);
             }
         } else {
             httpSession.setAttribute("error", "Invalid User. Try again!");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/login.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/pages/login.jsp");
             dispatcher.forward(request, response);
         }
     }

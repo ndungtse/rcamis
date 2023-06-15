@@ -52,7 +52,7 @@ public class ListMark extends HttpServlet {
                 httpSession.setAttribute("marks", marks);
                 UserRole[] userRoles = UserRole.values();
                 httpSession.setAttribute("userRoles", userRoles);
-                request.getRequestDispatcher("WEB-INF/pages/mark/marks.jsp").forward(request , response);
+                request.getRequestDispatcher("WEB-INF/pages/marks.jsp").forward(request , response);
             }
         } else {
             httpSession.setAttribute("error", "Invalid User. Try again!");

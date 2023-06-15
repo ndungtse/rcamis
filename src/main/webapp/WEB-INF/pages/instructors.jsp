@@ -7,7 +7,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <link rel="shortcut icon" href="images/rcalogo.png" type="image/x-icon"/>
-  <title>Students List</title>
+  <title>Instructors List</title>
 </head>
 <body>
 <jsp:include page="../components/headeradmin.jsp">
@@ -15,9 +15,9 @@
 </jsp:include>
 <div class="flex flex-col w-full gap-y-4">
   <div class="flex w-full items-center justify-between">
-    <h1 class="font-semibold text-xl text-center">Registered marks</h1>
+    <h1 class="font-semibold text-xl text-center">Registered instructors</h1>
     <a href="createstudent.php" class="bg-violet-800 hover:bg-violet-900 text-white gap-x-3 font-bold py-2 px-4 rounded">
-      <i class="bx bx-plus"></i>  Add Mark
+      <i class="bx bx-plus"></i>  Add Instructor
     </a>
   </div>
   <div class="w-full flex overflow-x-auto">
@@ -25,22 +25,30 @@
       <thead>
       <tr>
         <th>ID</th>
-        <th>Marks</th>
-        <th>Owner</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>PhoneNumber</th>
+        <th>Salary</th>
+        <th>Date of Birth</th>
+        <th>Remuneration time</th>
         <th>Action</th>
       </tr>
       </thead>
       <tbody>
-      <c:forEach items="${marks}" var="mark" varStatus="usrstatus">
+      <c:forEach items="${instructors}" var="csr" varStatus="usrstatus">
         <tr>
-          <td>${mark.id}</td>
-          <td>${mark.marks}</td>
-          <td>${mark.owner}</td>
+          <td>${csr.id}</td>
+          <td>${csr.firstName}</td>
+          <td>${csr.lastName}</td>
+          <td>${csr.phoneNumber}</td>
+          <td>${csr.salary}</td>
+          <td>${csr.dateOfBirth}</td>
+          <td>${csr.remunerationDate}</td>
           <td class="buttons">
-            <form method="get" action="delete.php/${csr.id}">
+            <form method="get" action="updatecourse.php/${csr.id}">
               <button type="submit">Delete</button>
             </form>
-            <form  method="get" action="update_mark.phpo/${csr.id}">
+            <form  method="get" action="updatecourse.phpo/${csr.id}">
               <button type="submit">Update</button>
             </form>
           </td>

@@ -7,17 +7,17 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <link rel="shortcut icon" href="images/rcalogo.png" type="image/x-icon"/>
-  <title>Students List</title>
+  <title>Managers List</title>
 </head>
 <body>
 <jsp:include page="../components/headeradmin.jsp">
-  <jsp:param value="users" name="title"/>
+  <jsp:param value="marks" name="title"/>
 </jsp:include>
 <div class="flex flex-col w-full gap-y-4">
   <div class="flex w-full items-center justify-between">
-    <h1 class="font-semibold text-xl text-center">Registered students</h1>
-    <a href="createstudent.php?page=createStudent" class="bg-violet-800 hover:bg-violet-900 text-white gap-x-3 font-bold py-2 px-4 rounded">
-      <i class="bx bx-plus"></i>  Add Student
+    <h1 class="font-semibold text-xl text-center">Registered managers</h1>
+    <a href="createstudent.php" class="bg-violet-800 hover:bg-violet-900 text-white gap-x-3 font-bold py-2 px-4 rounded">
+      <i class="bx bx-plus"></i>  Add Manager
     </a>
   </div>
   <div class="w-full flex overflow-x-auto">
@@ -25,30 +25,28 @@
       <thead>
       <tr>
         <th>ID</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Phone Number</th>
-        <th>dateOfBirth</th>
-        <th>isInternational</th>
-        <th>isPartTime</th>
-        <th>isRepeating</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>PhoneNumber</th>
+        <th>Date of Birth</th>
         <th>Action</th>
       </tr>
       </thead>
       <tbody>
-      <c:forEach items="${students}" var="usr" varStatus="usrstatus">
+      <c:forEach items="${managers}" var="manager" varStatus="usrstatus">
         <tr>
-          <td>${usr.id}</td>
-          <td>${usr.firstName}</td>
-          <td>${usr.lastName}</td>
-          <td>${usr.phoneNumber}</td>
-          <td>${usr.dateOfBirth}</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>
-            <button>Edit</button>
-            <button>Delete</button>
+          <td>${manager.id}</td>
+          <td>${manager.firstName}</td>
+          <td>${manager.lastName}</td>
+          <td>${manager.phoneNumber}</td>
+          <td>${manager.dateOfBirth}</td>
+          <td class="buttons">
+            <form method="get" action="updatecourse.php/${csr.id}">
+              <button type="submit">Delete</button>
+            </form>
+            <form  method="get" action="updatecourse.phpo/${csr.id}">
+              <button type="submit">Update</button>
+            </form>
           </td>
         </tr>
       </c:forEach>

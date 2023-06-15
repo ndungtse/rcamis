@@ -9,7 +9,7 @@
             name="title" value="Create User"/>
 </jsp:include>
 <form
-        class="flex h-fit flex-col max-w-[600px] p-4 w-full gap-y-4"
+        class="flex h-fit flex-col max-w-[600px] p-4 w-full shadow-lg mt-7 p-5 w-[20%] gap-y-4"
         method="POST"
         action="createuser.php?page=createuser"
 >

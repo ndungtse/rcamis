@@ -47,14 +47,14 @@ public class CreateStudent extends HttpServlet {
         if (pageRedirect != null) {
             System.out.println("The print statement is and the only is: " + pageRedirect);
             if (pageRedirect.equals("createStudent")) {
-                request.getRequestDispatcher("WEB-INF/createStudent.jsp").forward(request, response);
+                request.getRequestDispatcher("WEB-INF/pages/createStudent.jsp").forward(request, response);
             } else {
                 request.setAttribute("error ", "No user found");
-                request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
+                request.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(request, response);
             }
         } else {
             request.setAttribute("error ", "No user found");
-            request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(request, response);
         }
     }
 

@@ -68,7 +68,7 @@ public class CreateInstructor extends HttpServlet {
                             request.getParameter("firstName"),
                             request.getParameter("lastName"),
                             request.getParameter("phoneNumber"),
-                            simpleDateFormat.parse(request.getParameter("teacherDOB"))
+                            simpleDateFormat.parse(request.getParameter("doob"))
                     );
                 } catch (ParseException e) {
                     throw new RuntimeException(e);

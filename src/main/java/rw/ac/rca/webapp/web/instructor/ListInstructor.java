@@ -50,11 +50,11 @@ public class ListInstructor extends HttpServlet {
                 httpSession.setAttribute("instructors", instructors);
                 UserRole[] userRoles = UserRole.values();
                 httpSession.setAttribute("userRoles", userRoles);
-                request.getRequestDispatcher("WEB-INF/instructor/instructors.jsp").forward(request , response);
+                request.getRequestDispatcher("WEB-INF/pages/instructors.jsp").forward(request , response);
             }
         } else {
             httpSession.setAttribute("error", "Invalid User. Try again!");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/login.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/pages/login.jsp");
             dispatcher.forward(request, response);
         }
     }

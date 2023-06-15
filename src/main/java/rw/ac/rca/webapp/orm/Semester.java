@@ -20,7 +20,6 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name = "semester")
 public class Semester  implements Serializable{
 	/**
 	 * 

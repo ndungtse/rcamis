@@ -40,14 +40,14 @@ public class CreateInstructor extends HttpServlet {
         if (pageRedirect != null) {
             System.out.println("The print statement is and the only is: " + pageRedirect);
             if (pageRedirect.equals("createInstructor")) {
-                request.getRequestDispatcher("WEB-INF/instructor/createInstructor.jsp").forward(request, response);
+                request.getRequestDispatcher("WEB-INF/pages/createInstructor.jsp").forward(request, response);
             } else {
                 request.setAttribute("error ", "No user found");
-                request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
+                request.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(request, response);
             }
         } else {
             request.setAttribute("error ", "No user found");
-            request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(request, response);
         }
     }
 
@@ -68,7 +68,8 @@ public class CreateInstructor extends HttpServlet {
                             request.getParameter("firstName"),
                             request.getParameter("lastName"),
                             request.getParameter("phoneNumber"),
-                            simpleDateFormat.parse(request.getParameter("doob"))
+                            simpleDateFormat.parse(request.getParameter("renumerationTime")),
+                            simpleDateFormat.parse(request.getParameter("dob"))
                     );
                 } catch (ParseException e) {
                     throw new RuntimeException(e);
@@ -79,16 +80,16 @@ public class CreateInstructor extends HttpServlet {
                     List<Instructor> instructors = instructorDAO.getAllInstructors();
                     request.setAttribute("success" , "Successfully created the Course" );
                     request.setAttribute("instructors", instructors);
-                    request.getRequestDispatcher("WEB-INF/instructor/instructors.jsp").forward(request , response);
+                    request.getRequestDispatcher("WEB-INF/pages/instructors.jsp").forward(request , response);
                 }catch (Exception e){
                     request.setAttribute("error" , "Failed to create the Course" );
-                    request.getRequestDispatcher("WEB-INF/createCourse.jsp").forward(request , response);
+                    request.getRequestDispatcher("WEB-INF/pages/createCourse.jsp").forward(request , response);
                 }
             }else{
-                request.getRequestDispatcher("WEB-INF/login.jsp").forward(request , response);
+                request.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(request , response);
             }
         }else{
-            request.getRequestDispatcher("WEB-INF/login.jsp").forward(request , response);
+            request.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(request , response);
         }
     }
 }

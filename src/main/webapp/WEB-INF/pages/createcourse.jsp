@@ -11,7 +11,7 @@
 <form
         class="flex h-fit flex-col max-w-[600px] p-4 w-full gap-y-4"
         method="POST"
-        action="createcourse.php"
+        action="create_course.php"
 >
     <c:if test="${message != null}">
         <span class="text-yellow-700"> ${message}</span>

@@ -74,8 +74,8 @@ public class CreateStudent extends HttpServlet {
                     student = new Student(
                             request.getParameter("firstName"),
                             request.getParameter("lastName"),
-                            request.getParameter("studentPhoneNumber"),
-                            simpleDateFormat.parse(request.getParameter("studentDOB")),
+                            request.getParameter("phoneNumber"),
+                            simpleDateFormat.parse(request.getParameter("dob")),
                             false,
                             true,
                             false
@@ -88,18 +88,18 @@ public class CreateStudent extends HttpServlet {
                     studentDAO.saveStudent(student);
                     request.setAttribute("students", studentDAO.getAllStudents());
                     request.setAttribute("success" , "Successfully created the Course" );
-                    request.getRequestDispatcher("WEB-INF/students.jsp").forward(request , response);
+                    request.getRequestDispatcher("WEB-INF/pages/students.jsp").forward(request , response);
                     Thread.sleep(2000);
                     request.removeAttribute("success");
                 }catch (Exception e){
                     request.setAttribute("error" , "Failed to create the Course" );
-                    request.getRequestDispatcher("WEB-INF/createStudent.jsp").forward(request , response);
+                    request.getRequestDispatcher("WEB-INF/pages/createStudent.jsp").forward(request , response);
                 }
             }else{
-                request.getRequestDispatcher("WEB-INF/login.jsp").forward(request , response);
+                request.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(request , response);
             }
         }else{
-            request.getRequestDispatcher("WEB-INF/login.jsp").forward(request , response);
+            request.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(request , response);
         }
     }
 }

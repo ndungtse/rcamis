@@ -6,17 +6,17 @@
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <jsp:include page="../components/headeradmin.jsp">
   <jsp:param
-          name="title" value="Create User"/>
+          name="title" value="Create Manager"/>
 </jsp:include>
 <form
         class="flex h-fit flex-col max-w-[600px] p-4 w-full shadow-lg mt-7 p-5 w-[20%] gap-y-4"
         method="POST"
-        action="createstudent.php?page=createStudent"
+        action="create_manager.php?page=createManager"
 >
   <c:if test="${message != null}">
     <span class="text-yellow-700"> ${message}</span>
   </c:if>
-  <h2 class=" text-2xl ">Student Registration</h2>
+  <h2 class=" text-2xl ">Manager Registration</h2>
   <div class="flex flex-col gap-y-1">
     <label class=" px-2" for="FirstName"> FirstName</label>
     <input
@@ -61,7 +61,7 @@
           class="p-3 mt-1 px-9 rounded-md w-fit bg-violet-800 hover:bg-violet-900 duration-300 uppercase  text-white text-sm"
           type="submit"
   >
-    Register Student
+    Register Manager
   </button>
 </form>
 <%@ include file="../components/footer.jsp" %>

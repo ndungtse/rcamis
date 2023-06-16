@@ -15,10 +15,16 @@
 </jsp:include>
 <div class="flex flex-col w-full gap-y-4">
     <div class="flex w-full items-center justify-between">
-        <h1 class="font-semibold text-xl text-center">Registered Courses</h1>
-        <a href="createcourse.php" class="bg-violet-800 hover:bg-violet-900 text-white gap-x-3 font-bold py-2 px-4 rounded">
-            <i class="bx bx-plus"></i>  Add Course
-        </a>
+        <h1 class="font-semibold text-xl text-center">${message}</h1>
+        <div class="flex flex-row  gap-4">
+            <a href="generate_courses_report.php" class="bg-violet-800 flex gap-4 justify-between hover:bg-violet-900 text-white  font-bold py-2 px-3 rounded">
+                <i class="bx text-xl font-bold bx-download"></i>  Download excel
+            </a>
+            <a href="create_course.php" class="bg-violet-800 hover:bg-violet-900 text-white gap-x-3 font-bold py-2 px-4 rounded">
+                <i class="bx bx-plus"></i>  Add Course
+            </a>
+        </div>
+
     </div>
     <div class="w-full flex overflow-x-auto">
         <table class="min-w-[500px]">

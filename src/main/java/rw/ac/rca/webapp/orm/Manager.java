@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import java.util.Date;
 
 @Entity
-@Data
 public class Manager extends Person{
     public Manager(){}
     public Manager(String firstName, String lastName, String phoneNumber, Date managerDOB) {

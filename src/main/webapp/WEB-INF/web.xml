@@ -20,14 +20,14 @@
         <description>create course</description>
         <display-name>CreateCourse</display-name>
         <servlet-name>CreateCourse</servlet-name>
-        <servlet-class>rw.ac.rca.webapp.web.CreateCourse</servlet-class>
+        <servlet-class>rw.ac.rca.webapp.web.course.CreateCourse</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>CreateCourse</servlet-name>
-        <url-pattern>/createcourse.php</url-pattern>
+        <url-pattern>/create_course.php</url-pattern>
     </servlet-mapping>
     <servlet>
-        <description></description>
+        <description>Listing courses</description>
         <display-name>ListCourse</display-name>
         <servlet-name>ListCourse</servlet-name>
         <servlet-class>rw.ac.rca.webapp.web.ListCourse</servlet-class>
@@ -218,8 +218,66 @@
             <param-value>1</param-value>
         </init-param>
     </servlet>
+
     <servlet-mapping>
         <servlet-name>UpdateCourse</servlet-name>
         <url-pattern>/updatecourse.php/*</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <description>generating managers excel report</description>
+        <display-name>GenerateManagersReport</display-name>
+        <servlet-name>GenerateManagersReport</servlet-name>
+        <servlet-class>rw.ac.rca.webapp.web.manager.GenerateManagersReport</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GenerateManagersReport</servlet-name>
+        <url-pattern>/generate_managers_report.php/*</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <description>generating courses excel report</description>
+        <display-name>GenerateManagersReportFilterDate</display-name>
+        <servlet-name>GenerateManagersReportFilterDate</servlet-name>
+        <servlet-class>rw.ac.rca.webapp.web.course.GenerateManagersReportFilterDate</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GenerateManagersReportFilterDate</servlet-name>
+        <url-pattern>/generate_courses_report.php/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description>generating courses excel report</description>
+        <display-name>GenerateUsersReport</display-name>
+        <servlet-name>GenerateUsersReport</servlet-name>
+        <servlet-class>rw.ac.rca.webapp.web.user.GenerateUsersReport</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GenerateUsersReport</servlet-name>
+        <url-pattern>/generate_users_report.php/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description>generating courses excel report</description>
+        <display-name>GenerateStudentsReport</display-name>
+        <servlet-name>GenerateStudentsReport</servlet-name>
+        <servlet-class>rw.ac.rca.webapp.web.student.GenerateStudentsReport</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GenerateStudentsReport</servlet-name>
+        <url-pattern>/generate_students_report.php/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description>generating courses excel report</description>
+        <display-name>GenerateInstructorReport</display-name>
+        <servlet-name>GenerateInstructorReport</servlet-name>
+        <servlet-class>rw.ac.rca.webapp.web.instructor.GenerateInstructorReport</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GenerateInstructorReport</servlet-name>
+        <url-pattern>/generate_instructors_report.php/*</url-pattern>
+    </servlet-mapping>
+
+
+<!--    rw.ac.rca.webapp.web.manager-->
 </web-app>

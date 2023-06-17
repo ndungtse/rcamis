@@ -1,4 +1,4 @@
-package rw.ac.rca.webapp.web;
+package rw.ac.rca.webapp.web.auth;
 
 import java.io.IOException;
 

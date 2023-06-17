@@ -1,4 +1,4 @@
-package rw.ac.rca.webapp.web;
+package rw.ac.rca.webapp.web.student;
 
 import rw.ac.rca.webapp.dao.CourseDAO;
 import rw.ac.rca.webapp.dao.StudentDAO;
@@ -24,7 +24,7 @@ import javax.servlet.http.HttpSession;
  */
 public class CreateStudent extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private  StudentDAO studentDAO = StudentDAOImpl.getInstance();
+    private StudentDAO studentDAO = StudentDAOImpl.getInstance();
 
     /**
      * @see HttpServlet#HttpServlet()
@@ -44,17 +44,15 @@ public class CreateStudent extends HttpServlet {
         Object user = httpSession.getAttribute("authenticatedUser");
         System.out.println("The user in session is: " + user);
 
-        if (pageRedirect != null) {
+        if (user != null) {
             System.out.println("The print statement is and the only is: " + pageRedirect);
-            if (pageRedirect.equals("createStudent")) {
-                request.getRequestDispatcher("WEB-INF/createStudent.jsp").forward(request, response);
-            } else {
-                request.setAttribute("error ", "No user found");
-                request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
-            }
+//            if (pageRedirect.equals("createStudent")) {
+            request.getRequestDispatcher("WEB-INF/pages/createStudent.jsp").forward(request, response);
+//            } else {
+//            }
         } else {
             request.setAttribute("error ", "No user found");
-            request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(request, response);
         }
     }
 
@@ -66,9 +64,9 @@ public class CreateStudent extends HttpServlet {
         HttpSession httpSession = request.getSession();
         Object user = httpSession.getAttribute("authenticatedUser");
 
-        if(pageRedirect != null){
+        if (pageRedirect != null) {
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-            if(pageRedirect.equals("createStudent")){
+            if (pageRedirect.equals("createStudent")) {
                 Student student = null;
                 try {
                     student = new Student(
@@ -87,19 +85,19 @@ public class CreateStudent extends HttpServlet {
                 try {
                     studentDAO.saveStudent(student);
                     request.setAttribute("students", studentDAO.getAllStudents());
-                    request.setAttribute("success" , "Successfully created the Course" );
-                    request.getRequestDispatcher("WEB-INF/students.jsp").forward(request , response);
+                    request.setAttribute("success", "Successfully created the Course");
+                    request.getRequestDispatcher("WEB-INF/pages/students.jsp").forward(request, response);
                     Thread.sleep(2000);
                     request.removeAttribute("success");
-                }catch (Exception e){
-                    request.setAttribute("error" , "Failed to create the Course" );
-                    request.getRequestDispatcher("WEB-INF/createStudent.jsp").forward(request , response);
+                } catch (Exception e) {
+                    request.setAttribute("error", "Failed to create the Course");
+                    request.getRequestDispatcher("WEB-INF/pages/createStudent.jsp").forward(request, response);
                 }
-            }else{
-                request.getRequestDispatcher("WEB-INF/login.jsp").forward(request , response);
+            } else {
+                request.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(request, response);
             }
-        }else{
-            request.getRequestDispatcher("WEB-INF/login.jsp").forward(request , response);
+        } else {
+            request.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(request, response);
         }
     }
 }

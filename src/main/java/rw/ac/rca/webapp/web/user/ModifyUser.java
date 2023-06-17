@@ -1,4 +1,4 @@
-package rw.ac.rca.webapp.web;
+package rw.ac.rca.webapp.web.user;
 
 import rw.ac.rca.webapp.dao.UserDAO;
 import rw.ac.rca.webapp.dao.impl.UserDAOImpl;
@@ -59,19 +59,21 @@ public class ModifyUser extends HttpServlet {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+            return;
+        } else {
+            String id = request.getParameter("id");
+            User user = userDAO.getUserById(Integer.parseInt(id));
+            System.out.println("user found"+user);
+            UserRole[] userRoles = UserRole.values();
+            httpSession.setAttribute("userRoles", userRoles);
+            httpSession.setAttribute("user", user);
+            try {
+                request.getRequestDispatcher("WEB-INF/pages/useredit.jsp").forward(
+                        request, response);
+            } catch (IOException | ServletException e) {
+                throw new RuntimeException(e);
+            }
         }
-        String id = request.getParameter("id");
-        User user = userDAO.getUserById(Integer.parseInt(id));
-        UserRole[] userRoles = UserRole.values();
-        httpSession.setAttribute("userRoles", userRoles);
-        httpSession.setAttribute("user", user);
-        try {
-            request.getRequestDispatcher("WEB-INF/pages/register.jsp").forward(
-                    request, response);
-        } catch (IOException | ServletException e) {
-            throw new RuntimeException(e);
-        }
-
     }
 
     @Override

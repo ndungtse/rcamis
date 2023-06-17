@@ -1,5 +1,4 @@
-
-<%@include file="mainheader.jsp"%>
+<%@include file="mainheader.jsp" %>
 <div id="flex  w-full">
     <%@ include file="../sidebar.jsp" %>
     <div class="flex flex-col w-full md:pl-[250px] min-h-screen">
@@ -10,12 +9,17 @@
             </div>
             <div class="flex gap-x-4 items-center">
                 <i class='bx bxs-bell text-2xl'></i>
-                <div class="flex gap-x-2 items-center">
+                <div id="profBtn" class="flex gap-x-2 relative items-center">
                     <i class="bx bxs-user-circle text-4xl"></i>
                     <span class="flex items-center cursor-pointer">
                         <c:out value="${authenticatedUser.username}"/>
                         <i class='bx bx-chevron-down text-2xl'></i>
                     </span>
+                    <div id="profDrop" class="absolute w-full bg-white border-[1px] flex hidden flex-col py-3 lef-0 top-full shadow-md">
+                            <a class="px-3 py-2 hover:bg-violet-800 hover:text-white" href="/logout">
+                                Logout
+                            </a>
+                    </div>
                 </div>
             </div>
         </div>

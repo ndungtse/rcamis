@@ -28,7 +28,7 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Role</th>
-                <th>Check User</th>
+                <th>Actions</th>
             </tr>
             </thead>
             <tbody>
@@ -38,8 +38,10 @@
                     <td>${usr.fullName}</td>
                     <td>${usr.email}</td>
                     <td>${usr.userRole.getRoleDescription()}</td>
-                    <td><input type="checkbox" name="usrIds"
-                               value="${usr.id}"/></td>
+                    <td>
+                        <a href="modify.php/edituser?id=${usr.id}">update</a>
+                        <a href="modify.php/delete?id=${usr.id}">delete</a>
+                    </td>
                 </tr>
             </c:forEach>
             </tbody>

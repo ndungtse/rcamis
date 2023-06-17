@@ -1,4 +1,4 @@
-package rw.ac.rca.webapp.web;
+package rw.ac.rca.webapp.web.user;
 
 import java.io.IOException;
 import java.util.List;

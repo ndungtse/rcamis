@@ -10,7 +10,7 @@
         <description>login as user</description>
         <display-name>Login</display-name>
         <servlet-name>Login</servlet-name>
-        <servlet-class>rw.ac.rca.webapp.web.Login</servlet-class>
+        <servlet-class>rw.ac.rca.webapp.web.auth.Login</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
@@ -20,7 +20,7 @@
         <description>create course</description>
         <display-name>CreateCourse</display-name>
         <servlet-name>CreateCourse</servlet-name>
-        <servlet-class>rw.ac.rca.webapp.web.CreateCourse</servlet-class>
+        <servlet-class>rw.ac.rca.webapp.web.course.CreateCourse</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>CreateCourse</servlet-name>
@@ -30,7 +30,7 @@
         <description></description>
         <display-name>ListCourse</display-name>
         <servlet-name>ListCourse</servlet-name>
-        <servlet-class>rw.ac.rca.webapp.web.ListCourse</servlet-class>
+        <servlet-class>rw.ac.rca.webapp.web.course.ListCourse</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ListCourse</servlet-name>
@@ -40,7 +40,7 @@
         <description>create user</description>
         <display-name>CreateUser</display-name>
         <servlet-name>CreateUser</servlet-name>
-        <servlet-class>rw.ac.rca.webapp.web.CreateUser</servlet-class>
+        <servlet-class>rw.ac.rca.webapp.web.user.CreateUser</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>CreateUser</servlet-name>
@@ -50,7 +50,7 @@
         <description>register user</description>
         <display-name>Register</display-name>
         <servlet-name>Register</servlet-name>
-        <servlet-class>rw.ac.rca.webapp.web.Register</servlet-class>
+        <servlet-class>rw.ac.rca.webapp.web.auth.Register</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Register</servlet-name>
@@ -60,7 +60,7 @@
         <description></description>
         <display-name>ListUser</display-name>
         <servlet-name>ListUser</servlet-name>
-        <servlet-class>rw.ac.rca.webapp.web.ListUser</servlet-class>
+        <servlet-class>rw.ac.rca.webapp.web.user.ListUser</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ListUser</servlet-name>
@@ -81,7 +81,7 @@
         <description></description>
         <display-name>CreateStudent</display-name>
         <servlet-name>CreateStudent</servlet-name>
-        <servlet-class>rw.ac.rca.webapp.web.CreateStudent</servlet-class>
+        <servlet-class>rw.ac.rca.webapp.web.student.CreateStudent</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>CreateStudent</servlet-name>
@@ -91,7 +91,7 @@
         <description>List all students from database</description>
         <display-name>ListStudent</display-name>
         <servlet-name>ListStudent</servlet-name>
-        <servlet-class>rw.ac.rca.webapp.web.ListStudent</servlet-class>
+        <servlet-class>rw.ac.rca.webapp.web.student.ListStudent</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ListStudent</servlet-name>
@@ -212,7 +212,7 @@
         <description></description>
         <display-name>UpdateCourse</display-name>
         <servlet-name>UpdateCourse</servlet-name>
-        <servlet-class>rw.ac.rca.webapp.web.UpdateCourse</servlet-class>
+        <servlet-class>rw.ac.rca.webapp.web.course.UpdateCourse</servlet-class>
         <init-param>
             <param-name>id</param-name>
             <param-value>1</param-value>

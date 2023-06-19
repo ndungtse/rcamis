@@ -46,9 +46,18 @@ public class Course implements Serializable{
 	@ManyToMany(cascade= CascadeType.ALL)
 	@JoinTable(name = "course_instructor", joinColumns = {@JoinColumn(name="course_id")}, inverseJoinColumns = {@JoinColumn(name="instructor_id")})
 	private Set<Instructor> instructors;
-	
 
-	public Set<Instructor> getInstructors() {
+    public Course(String courseName, String courseCode, int  maxStudent, int  minStudent, Date startDate, Date endDate) {
+		this.name = courseName;
+		this.code = courseCode;
+		this.maxStudent = maxStudent;
+		this.minStudent = minStudent;
+		this.start = startDate;
+		this.end = endDate;
+    }
+
+
+    public Set<Instructor> getInstructors() {
 		return instructors;
 	}
 	public void setInstructors(Set<Instructor> instructors) {

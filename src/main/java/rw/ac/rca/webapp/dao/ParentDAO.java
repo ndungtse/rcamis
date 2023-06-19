@@ -7,4 +7,6 @@ import java.util.List;
 public interface  ParentDAO {
     public  List<Parent> getAllParents();
     public  Parent registerParent(Parent parent);
+    public Parent getParentById(int id);
+    public void deleteParent(Parent parent);
 }

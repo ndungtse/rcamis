@@ -43,8 +43,15 @@
                     <td>${usr.fullName}</td>
                     <td>${usr.email}</td>
                     <td>${usr.userRole.getRoleDescription()}</td>
-                    <td><input type="checkbox" name="usrIds"
-                               value="${usr.id}"/></td>
+                    <td class="buttons flex space-x-4 justify-end">
+                        <a href="update.php?id=${usr.id}&page=updateUser">
+                            <button type="submit"><i class='bx bxs-edit text-2xl'></i></button>
+                        </a>
+                        <a href="delete.php?id=${usr.id}&page=deleteUser">
+                            <button type="submit"><i class='bx bxs-trash text-2xl'></i></button>
+                        </a>
+                    </td>
+
                 </tr>
             </c:forEach>
             </tbody>

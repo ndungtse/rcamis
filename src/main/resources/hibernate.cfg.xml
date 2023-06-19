@@ -35,6 +35,8 @@
         <mapping class="rw.ac.rca.webapp.orm.Course"/>
         <mapping class="rw.ac.rca.webapp.orm.Enrol"/>
         <mapping class="rw.ac.rca.webapp.orm.Instructor"/>
+        <mapping class="rw.ac.rca.webapp.orm.Mark"/>
+        <mapping class="rw.ac.rca.webapp.orm.Manager"/>
         <mapping class="rw.ac.rca.webapp.orm.Person"/>
         <mapping class="rw.ac.rca.webapp.orm.Student"/>
         <mapping class="rw.ac.rca.webapp.orm.Semester"/>

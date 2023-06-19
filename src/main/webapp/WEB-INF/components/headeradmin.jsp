@@ -8,6 +8,9 @@
                 <i class='bx bx-search text-2xl'></i>
                 <input type="text" class="w-full outline-none px-2" placeholder="Search...">
             </div>
+            <div>
+                <p>${responseMessage}</p>
+            </div>
             <div class="flex gap-x-4 items-center">
                 <i class='bx bxs-bell text-2xl'></i>
                 <div class="flex gap-x-2 items-center">

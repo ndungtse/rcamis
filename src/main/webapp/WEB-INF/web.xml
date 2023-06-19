@@ -110,7 +110,7 @@
     </servlet-mapping>
 
     <servlet>
-        <description></description>
+        <description>Marks listing</description>
         <display-name>ListMark</display-name>
         <servlet-name>ListMark</servlet-name>
         <servlet-class>rw.ac.rca.webapp.web.mark.ListMark</servlet-class>
@@ -278,6 +278,28 @@
         <url-pattern>/generate_instructors_report.php/*</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <description>generating courses excel report</description>
+        <display-name>DeleteResource</display-name>
+        <servlet-name>DeleteResource</servlet-name>
+        <servlet-class>rw.ac.rca.webapp.web.DeleteResource</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteResource</servlet-name>
+        <url-pattern>/delete.php</url-pattern>
+    </servlet-mapping>
 
+    <servlet>
+        <description>generating courses excel report</description>
+        <display-name>UpdateResource</display-name>
+        <servlet-name>UpdateResource</servlet-name>
+        <servlet-class>rw.ac.rca.webapp.web.UpdateResource</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateResource</servlet-name>
+        <url-pattern>/update.php</url-pattern>
+    </servlet-mapping>
+
+<!--    rw.ac.rca.webapp.web.mark-->
 <!--    rw.ac.rca.webapp.web.manager-->
 </web-app>

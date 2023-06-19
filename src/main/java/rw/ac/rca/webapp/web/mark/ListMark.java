@@ -49,8 +49,10 @@ public class ListMark extends HttpServlet {
         if (pageRedirect != null) {
             if (pageRedirect.equals("marks") && request.getParameter("action").equals("list")) {
                 List<Mark> marks = markDAO.getAllMarks();
+                System.out.println("======================================== marks : " + marks);
                 httpSession.setAttribute("marks", marks);
                 UserRole[] userRoles = UserRole.values();
+                request.setAttribute("marks", marks);
                 httpSession.setAttribute("userRoles", userRoles);
                 request.getRequestDispatcher("WEB-INF/pages/marks.jsp").forward(request , response);
             }

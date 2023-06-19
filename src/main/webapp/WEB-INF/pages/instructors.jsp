@@ -51,13 +51,13 @@
           <td>${csr.salary}</td>
           <td>${csr.dateOfBirth}</td>
           <td>${csr.remunerationDate}</td>
-          <td class="buttons">
-            <form method="get" action="updatecourse.php/${csr.id}">
-              <button type="submit">Delete</button>
-            </form>
-            <form  method="get" action="updatecourse.phpo/${csr.id}">
-              <button type="submit">Update</button>
-            </form>
+          <td class="buttons flex space-x-4 justify-end">
+            <a href="update.php?id=${csr.id}&page=updateInstructor">
+              <button type="submit"><i class='bx bxs-edit text-2xl'></i></button>
+            </a>
+            <a href="delete.php?id=${csr.id}&page=deleteInstructor">
+              <button type="submit"><i class='bx bxs-trash text-2xl'></i></button>
+            </a>
           </td>
         </tr>
       </c:forEach>

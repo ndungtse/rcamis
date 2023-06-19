@@ -37,6 +37,7 @@
                 <th>End Date</th>
                 <th>Min Students</th>
                 <th>Max Students</th>
+                <th>Action</th>
             </tr>
             </thead>
             <tbody>
@@ -49,6 +50,14 @@
                     <td>${course.end}</td>
                     <td>${course.minStudent}</td>
                     <td>${course.maxStudent}</td>
+                    <td class="buttons flex space-x-4 justify-end">
+                        <a href="update.php?id=${course.id}&page=updateCourse">
+                            <button type="submit"><i class='bx bxs-edit text-2xl'></i></button>
+                        </a>
+                        <a href="delete.php?id=${course.id}&page=deleteCourse">
+                            <button type="submit"><i class='bx bxs-trash text-2xl'></i></button>
+                        </a>
+                    </td>
                 </tr>
             </c:forEach>
             </tbody>

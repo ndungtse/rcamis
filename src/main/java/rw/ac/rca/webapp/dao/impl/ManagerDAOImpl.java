@@ -43,4 +43,33 @@ public class ManagerDAOImpl extends  DAO implements ManagerDAO {
         }
         return null;
     }
+
+    @Override
+    public Manager getManagerById(int id) {
+        try {
+            begin();
+            Query query = getSession().createQuery("from Manager where id =:id");
+            query.setParameter("id", id);
+            Manager manager = (Manager) query.list();
+            commit();
+            return manager;
+        }catch (Exception exception){
+            System.out.println("Failed to get manager by id");
+            rollback();
+            return null;
+        }
+    }
+
+    @Override
+    public void deleteManager(Manager manager) {
+        try {
+            begin();
+            getSession().delete(manager);
+            commit();
+        }catch (Exception exception){
+            System.out.println("Failed to delete manager");
+            rollback();
+        }
+
+    }
 }

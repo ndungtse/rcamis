@@ -41,4 +41,32 @@ public class ParentDAImpl extends DAO implements ParentDAO {
             return null;
         }
     }
+
+    @Override
+    public Parent getParentById(int id) {
+        try {
+            begin();
+            Query query = getSession().createQuery("from Parent where id=:id");
+            query.setParameter("id", id);
+            Parent parent = (Parent) query.list();
+            commit();
+            return parent;
+        }catch (Exception exception){
+            System.out.println("Failed to get a parent with id");
+            rollback();
+            return null;
+        }
+    }
+
+    @Override
+    public void deleteParent(Parent parent) {
+        try{
+            begin();
+            getSession().delete(parent);
+            commit();
+        }catch (Exception exception){
+            System.out.println("Failed to delete a parent");
+            rollback();
+        }
+    }
 }

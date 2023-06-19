@@ -40,14 +40,14 @@ public class CreateMark extends HttpServlet {
         if (pageRedirect != null) {
             System.out.println("The print statement is and the only is: " + pageRedirect);
             if (pageRedirect.equals("createMark")) {
-                request.getRequestDispatcher("WEB-INF/mark/createMark.jsp").forward(request, response);
+                request.getRequestDispatcher("WEB-INF/pages/createMark.jsp").forward(request, response);
             } else {
                 request.setAttribute("error ", "No user found");
-                request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
+                request.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(request, response);
             }
         } else {
             request.setAttribute("error ", "No user found");
-            request.getRequestDispatcher("WEB-INF/login.jsp").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(request, response);
         }
     }
     /**
@@ -67,22 +67,17 @@ public class CreateMark extends HttpServlet {
                             request.getParameter("marks"),
                             request.getParameter("owner")
                     );
-                } catch ( Exception e) {
-                    throw new RuntimeException(e);
-                }
-                // Saving the marks;
-                try {
                     markDAO.saveOrUpdateMark(mark);
                     List<Mark> marks = markDAO.getAllMarks();
                     request.setAttribute("success" , "Successfully created the Course" );
                     request.setAttribute("marks", marks);
-                    request.getRequestDispatcher("WEB-INF/mark/marks.jsp").forward(request , response);
+                    request.getRequestDispatcher("WEB-INF/pages/marks.jsp").forward(request , response);
                 }catch (Exception e){
                     request.setAttribute("error" , "Failed to create the Course" );
-                    request.getRequestDispatcher("WEB-INF/mark/createMark.jsp").forward(request , response);
+                    request.getRequestDispatcher("WEB-INF/pages/createMark.jsp").forward(request , response);
                 }
             }else{
-                request.getRequestDispatcher("WEB-INF/login.jsp").forward(request , response);
+                request.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(request , response);
             }
         }else{
             request.getRequestDispatcher("WEB-INF/login.jsp").forward(request , response);

@@ -41,4 +41,31 @@ public class EmployeeDAOImpl extends DAO implements EmployeeDAO {
             return null;
         }
     }
+
+    @Override
+    public Employee getEmployeeById(int id) {
+        try {
+            begin();
+            Query query = getSession().createQuery("from Employee where id =:id");
+            Employee employee = (Employee) query.list();
+            commit();
+            return employee;
+        }catch (Exception exception){
+            System.out.println("Failed to get employee by id : " + exception.getMessage());
+            rollback();
+            return null;
+        }
+    }
+    @Override
+    public void deleteEmployee(Employee employee) {
+        try {
+            begin();
+            getSession().delete(employee);
+            commit();
+        }catch (Exception exception){
+            System.out.println("Failed to delete employee with id : " + exception.getMessage());
+            rollback();
+        }
+
+    }
 }

@@ -4,10 +4,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 import org.springframework.core.io.InputStreamResource;
-import rw.ac.rca.webapp.orm.Course;
-import rw.ac.rca.webapp.orm.Instructor;
-import rw.ac.rca.webapp.orm.Student;
-import rw.ac.rca.webapp.orm.User;
+import rw.ac.rca.webapp.orm.*;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
@@ -16,7 +13,7 @@ import java.io.ByteArrayOutputStream;
 import java.util.List;
 public class ExcelDownloader {
 
-    public static void DownloadManagersExcel(List<Student> students, HttpServletResponse response) {
+    public static void DownloadManagersExcel(List<Manager> managers, HttpServletResponse response) {
         try (Workbook workbook = new SXSSFWorkbook();
              ByteArrayOutputStream out = new ByteArrayOutputStream();
              ServletOutputStream servletOutputStream = response.getOutputStream()) {
@@ -32,7 +29,7 @@ public class ExcelDownloader {
             headRow.createCell(4).setCellValue("Date of Birth");
             int rowIndex = 1;
 
-            for (Student manager : students) {
+            for (Manager manager : managers) {
                 Row row = sheet.createRow(rowIndex++);
                 row.createCell(0).setCellValue(k);
                 if (manager.getFirstName() == null) {
@@ -62,7 +59,7 @@ public class ExcelDownloader {
 
             InputStreamResource file = new InputStreamResource(new ByteArrayInputStream(out.toByteArray()));
             response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
-            response.setHeader("Content-Disposition", "attachment; filename=" + "students" + ".xlsx");
+            response.setHeader("Content-Disposition", "attachment; filename=" + "managers" + ".xlsx");
 
             servletOutputStream.write(out.toByteArray());
             servletOutputStream.flush();

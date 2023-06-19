@@ -42,9 +42,37 @@ public class InstructorDAOImpl extends DAO implements InstructorDAO {
             commit();
             return  instructor;
         }catch (Exception exception){
-            System.out.println("Error  failed to  save the instructor: " + exception.getMessage());
+            System.out.println("Error  failed to  save the Instructor: " + exception.getMessage());
             rollback();
             return null;
         }
+    }
+
+    @Override
+    public Instructor getInstructorById(int id) {
+        try{
+            begin();
+            Query query = getSession().createQuery("from Instructor where id =:idValue");
+            query.setParameter("idValue", id);
+            Instructor instructor = (Instructor) query.list();
+            commit();
+            return  instructor;
+        }catch (Exception exception){
+            System.out.println("Failed to get the instructor by id : " + exception.getMessage());
+            rollback();
+            return null;
+        }
+    }
+
+    @Override
+    public void deleteInstructor(Instructor instructor) {
+         try{
+             begin();
+             getSession().delete(instructor);
+             commit();
+         }catch (Exception exception){
+             System.out.println("Failed to delete an instructor : " + exception.getMessage());
+             rollback();
+         }
     }
 }

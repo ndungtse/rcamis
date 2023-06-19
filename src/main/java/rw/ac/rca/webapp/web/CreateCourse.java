@@ -53,9 +53,6 @@ public class CreateCourse extends HttpServlet {
             //			set start date and end date
             String startDate = request.getParameter("startDate");
             String endDate = request.getParameter("endDate");
-            System.out.println("Start date: " + startDate);
-            System.out.println("End date: " + endDate);
-//            parse date
             Date start = Util.parseDate(startDate);
             Date end = Util.parseDate(endDate);
             course.setStart(start);

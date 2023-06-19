@@ -41,25 +41,11 @@ public class GenerateManagersReport extends HttpServlet {
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // TODO Auto-generated method stub
-//        String pageRedirect = request.getParameter("page");
-//        HttpSession httpSession = request.getSession();
-//        Object user = httpSession.getAttribute("authenticatedUser");
-//        System.out.println("The user in session is: " + user);
-
-//        if (pageRedirect != null) {
-//            if (pageRedirect.equals("reportManagers") && request.getParameter("action").equals("list")) {
                 List<Manager> managers = managerDAO.getAllManagers();
-                List<Student> users = studentDAO.getAllStudents();
-                ExcelDownloader.DownloadManagersExcel(users, response);
-        System.out.println("downoloading=================================");
+                ExcelDownloader.DownloadManagersExcel(managers, response);
                 request.setAttribute("managers", managers);
                 request.getRequestDispatcher("WEB-INF/pages/managers.jsp").forward(request , response);
-//            }
-//        } else {
-//            httpSession.setAttribute("error", "Invalid User. Try again!");
-//            RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/pages/login.jsp");
-//            dispatcher.forward(request, response);
-//        }
+
     }
 
     /**

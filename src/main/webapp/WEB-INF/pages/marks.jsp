@@ -7,7 +7,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <link rel="shortcut icon" href="images/rcalogo.png" type="image/x-icon"/>
-  <title>Students List</title>
+  <title>Marks List</title>
 </head>
 <body>
 <jsp:include page="../components/headeradmin.jsp">
@@ -16,7 +16,7 @@
 <div class="flex flex-col w-full gap-y-4">
   <div class="flex w-full items-center justify-between">
     <h1 class="font-semibold text-xl text-center">Registered marks</h1>
-    <a href="createstudent.php" class="bg-violet-800 hover:bg-violet-900 text-white gap-x-3 font-bold py-2 px-4 rounded">
+    <a href="create_mark.php?page=createMark" class="bg-violet-800 hover:bg-violet-900 text-white gap-x-3 font-bold py-2 px-4 rounded">
       <i class="bx bx-plus"></i>  Add Mark
     </a>
   </div>
@@ -36,13 +36,13 @@
           <td>${mark.id}</td>
           <td>${mark.marks}</td>
           <td>${mark.owner}</td>
-          <td class="buttons">
-            <form method="get" action="delete.php/${csr.id}">
-              <button type="submit">Delete</button>
-            </form>
-            <form  method="get" action="update_mark.phpo/${csr.id}">
-              <button type="submit">Update</button>
-            </form>
+          <td class="buttons flex space-x-4 justify-end">
+            <a href="update.php?id=${mark.id}&page=updateMark">
+              <button type="submit"><i class='bx bxs-edit text-2xl'></i></button>
+            </a>
+            <a href="delete.php?id=${mark.id}&page=deleteMark">
+              <button type="submit"><i class='bx bxs-trash text-2xl'></i></button>
+            </a>
           </td>
         </tr>
       </c:forEach>

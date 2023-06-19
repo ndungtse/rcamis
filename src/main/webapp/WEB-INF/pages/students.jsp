@@ -51,9 +51,13 @@
           <td>false</td>
           <td>false</td>
           <td>false</td>
-          <td>
-            <button>Edit</button>
-            <button>Delete</button>
+          <td class="buttons flex space-x-4 justify-end">
+            <a href="update.php?id=${usr.id}&page=updateStudent">
+              <button type="submit"><i class='bx bxs-edit text-2xl'></i></button>
+            </a>
+            <a href="delete.php?id=${usr.id}&page=deleteStudent">
+              <button type="submit"><i class='bx bxs-trash text-2xl'></i></button>
+            </a>
           </td>
         </tr>
       </c:forEach>

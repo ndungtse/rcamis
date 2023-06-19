@@ -45,13 +45,13 @@
           <td>${manager.lastName}</td>
           <td>${manager.phoneNumber}</td>
           <td>${manager.dateOfBirth}</td>
-          <td class="buttons">
-            <form method="get" action="updatecourse.php/${csr.id}">
-              <button type="submit">Delete</button>
-            </form>
-            <form  method="get" action="updatecourse.phpo/${csr.id}">
-              <button type="submit">Update</button>
-            </form>
+          <td class="buttons flex space-x-4 justify-end">
+            <a href="update.php?id=${manager.id}&page=updateManager">
+              <button type="submit"><i class='bx bxs-edit text-2xl'></i></button>
+            </a>
+            <a href="delete.php?id=${manager.id}&page=deleteManager">
+              <button type="submit"><i class='bx bxs-trash text-2xl'></i></button>
+            </a>
           </td>
         </tr>
       </c:forEach>

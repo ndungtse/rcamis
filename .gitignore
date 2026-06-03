@@ -1,6 +1,10 @@
 /target/
 
 .fake
-temp_auto_push.bat
-temp_interactive_push.bat
 .gitignore
+
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
